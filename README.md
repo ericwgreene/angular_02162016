@@ -6,13 +6,13 @@ This repository contains a **start** and **completed** folder. The **start** fol
 
 ## Schedule
 
-Tuesday - Thursday: 9am to 5pm
+- Tuesday - Thursday: 9am to 5pm
 
-Breaks:
-	Morning: 10:25am to 10:35am
-	Lunch: Noon to 1pm
-	Afternoon #1: 2:15pm to 2:25pm
-	Afternoon #1: 3:40 to 3:50pm	
+- Breaks:
+ - Morning: 10:25am to 10:35am
+ - Lunch: Noon to 1pm
+ - Afternoon #1: 2:15pm to 2:25pm
+ - Afternoon #1: 3:40 to 3:50pm	
 
 ## Getting Started
 
