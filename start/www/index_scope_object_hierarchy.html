@@ -9,23 +9,35 @@
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="css/site.css" rel="stylesheet">
 		<base href="/">
+		<style>
 
+			.ng-scope {
+				margin:10px;
+				border:solid red 1px;
+				padding:10px;
+			}
+
+		</style>
 	</head>
 
 	<body>
 
 		<main ng-app="WidgetApp" class="container">
-			<div ng-controller="ParentCtrl">
-				Parent Message: {{o.message}}<br>
-				Parent Message: <input ng-model="o.message">
-				<div ng-controller="ChildCtrl">
-					Child Message: {{o.message}}<br>
-					Child Message: <input ng-model="o.message">
-
-
-					<div ng-show="showMe">Can you see me? </div>
-					<div><input ng-model="showMe" type="checkbox">Show Me!</div>
-				</div>
+			{{message}}
+			<div ng-controller="HomeCtrl">
+				Scope Id: {{$id}}
+				{{message}}
+				<div ng-controller="HomeCtrl">
+					Scope Id: {{$id}}
+					{{message}}
+				</div>			</div>
+			<div ng-controller="HomeCtrl">
+				Scope Id: {{$id}}
+				{{message}}
+			</div>
+			<div ng-controller="HomeCtrl">
+				Scope Id: {{$id}}
+				{{message}}
 			</div>
 		</main>
 

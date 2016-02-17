@@ -3,8 +3,12 @@
 	"use strict";
 
 	angular.module("WidgetApp", [])
-		.controller("HomeCtrl", function($scope) {
-			$scope.message = "Widgets Application";
-		});
+		.controller("ParentCtrl", function($scope) {
 
+			$scope.o = {};
+
+		})
+		.controller("ChildCtrl", function($scope) {
+
+		});
 })(angular);
