@@ -9,34 +9,23 @@
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="css/site.css" rel="stylesheet">
 		<base href="/">
+
 	</head>
 
 	<body>
 
 		<main ng-app="WidgetApp" class="container">
-			<div ng-controller="HomeCtrl">
-
-				<ul>
-					<li ng-repeat="color in colors | orderBy:'toString()':true">{{color}}</li>
-				</ul>
-
-				<form>
-					<label>
-						New Color: <input type="text" ng-model="newColor">
-					</label>
-					<button type="button" onclick="addColor()">Add Color</button>
-				</form>
+			<div ng-controller="ParentCtrl">
+				Parent Message: {{o.message}}<br>
+				Parent Message: <input ng-model="o.message">
+				<div ng-controller="ChildCtrl">
+					Child Message: {{o.message}}<br>
+					Child Message: <input ng-model="o.message">
 
 
-
-
-				<ul>
-					<li ng-repeat="country in countries | orderBy:'name':true">
-						{{country.name}} - {{country.capital}}
-						<button ng-click="editCountry(country.id)">Edit</button>
-					</li>
-				</ul>
-
+					<div ng-show="showMe">Can you see me? </div>
+					<div><input ng-model="showMe" type="checkbox">Show Me!</div>
+				</div>
 			</div>
 		</main>
 

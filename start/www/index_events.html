@@ -5,8 +5,8 @@
 	<head>
 		<title>Angular.js Demo App</title>
 		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		<!-- <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet"> -->
 		<link href="css/site.css" rel="stylesheet">
 		<base href="/">
 	</head>
@@ -14,30 +14,14 @@
 	<body>
 
 		<main ng-app="WidgetApp" class="container">
-			<div ng-controller="HomeCtrl">
-
-				<ul>
-					<li ng-repeat="color in colors | orderBy:'toString()':true">{{color}}</li>
-				</ul>
-
-				<form>
-					<label>
-						New Color: <input type="text" ng-model="newColor">
-					</label>
-					<button type="button" onclick="addColor()">Add Color</button>
-				</form>
-
-
-
-
-				<ul>
-					<li ng-repeat="country in countries | orderBy:'name':true">
-						{{country.name}} - {{country.capital}}
-						<button ng-click="editCountry(country.id)">Edit</button>
-					</li>
-				</ul>
-
-			</div>
+			<span ng-controller="LeftCtrl">
+				Left
+				<button ng-click="clickMe()">Click Me!</button>
+			</span>
+			<span ng-controller="RightCtrl">
+				Right
+				{{message}}
+			</span>
 		</main>
 
 		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/ng/angular.js"></script>

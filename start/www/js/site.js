@@ -2,13 +2,6 @@
 
 	"use strict";
 
-	angular.module("WidgetApp", [])
-		.controller("ParentCtrl", function($scope) {
+	angular.module("WidgetApp", []);
 
-			$scope.o = {};
-
-		})
-		.controller("ChildCtrl", function($scope) {
-
-		});
 })(angular);

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Angular.js Demo App</title>
+		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+		<!-- <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet"> -->
+		<link href="css/site.css" rel="stylesheet">
+		<base href="/">
+		<style>
+
+			label input, label textarea, label select {
+				font-weight: normal;
+			}
+
+			input.ng-touched.ng-invalid, input.error-box {
+				border:2px solid red;
+			}
+
+			label > span {
+				display:inline-block;
+				width:100px;
+			}
+
+			label > textarea {
+				vertical-align: top;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<main ng-app="WidgetApp" class="container">
+			<div ng-controller="HomeCtrl">
+
+				<form name="widgetForm" novalidate ng-submit="saveWidget()">
+
+					<div>
+						<label>
+							<span>Name:</span> <input type="text" ng-model="widget.name"
+								name="widgetName" vw-required
+								ng-class="{'error-box':widgetForm.widgetName.$invalid && widgetForm.widgetName.$touched}">
+							<span ng-show="widgetForm.widgetName.$invalid && widgetForm.widgetName.$touched">
+								Please enter a widget name.
+							</span>
+						</label>
+					</div>
+					<div>
+						<label>
+							<span>Description:</span> <textarea ng-model="widget.description"
+								name="widgetDescription"></textarea>
+						</label>
+					</div>
+
+					<div>
+						<fieldset>
+							<legend>Widget Size</legend>
+
+							<label>
+								Small: <input type="radio" name="widgetSize" ng-model="widget.size" value="small">
+							</label>
+							<label>
+								Medium: <input type="radio" name="widgetSize" ng-model="widget.size" value="medium">
+							</label>
+							<label>
+								Large: <input type="radio" name="widgetSize" ng-model="widget.size" value="large">
+							</label>
+
+						</fieldset>
+					</div>
+
+					<div>
+						<label>
+							<span>Discontinued?</span> <input type="checkbox" name="widgetDiscontinued" ng-model="widget.discontinued">
+						</label>
+					</div>
+
+					<div>
+						<label>
+							<span>Color:</span>
+							<select ng-model="widget.color" name="widgetColor" ng-change="colorChange()"
+								ng-options="color.code as color.label group by color.category for color in colors | orderBy:'label'">
+								<option value="">Select One...</option>
+							</select>
+						</label>
+					</div>
+
+					<button xng-click="saveWidget()" type="submit" xng-disabled="widgetForm.$invalid">Save Widget</button>
+				</form>
+
+			</div>
+		</main>
+
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/ng/angular.js"></script>
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/ng/angular-animate.js"></script>
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/ng/angular-sanitize.js"></script>
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/ng/angular-ui-router.js"></script>
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/site.js"></script>
+
+	</body>
+
+</html>

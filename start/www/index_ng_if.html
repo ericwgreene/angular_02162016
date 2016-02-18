@@ -5,8 +5,8 @@
 	<head>
 		<title>Angular.js Demo App</title>
 		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		<!-- <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet"> -->
 		<link href="css/site.css" rel="stylesheet">
 		<base href="/">
 	</head>
@@ -16,26 +16,15 @@
 		<main ng-app="WidgetApp" class="container">
 			<div ng-controller="HomeCtrl">
 
-				<ul>
-					<li ng-repeat="color in colors | orderBy:'toString()':true">{{color}}</li>
-				</ul>
+				<div>
+					<input type="checkbox" ng-model="showMe"> Show Me
+				</div>
+				<div ng-if="showMe">
+					You can see me!
+					{{message}}
+					<input ng-model="person.firstName">
+				</div>
 
-				<form>
-					<label>
-						New Color: <input type="text" ng-model="newColor">
-					</label>
-					<button type="button" onclick="addColor()">Add Color</button>
-				</form>
-
-
-
-
-				<ul>
-					<li ng-repeat="country in countries | orderBy:'name':true">
-						{{country.name}} - {{country.capital}}
-						<button ng-click="editCountry(country.id)">Edit</button>
-					</li>
-				</ul>
 
 			</div>
 		</main>

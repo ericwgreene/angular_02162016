@@ -9,24 +9,18 @@
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="css/site.css" rel="stylesheet">
 		<base href="/">
-
 	</head>
 
 	<body>
 
-		<main ng-app="WidgetApp" class="container">
-			<div ng-controller="ParentCtrl">
-				Parent Message: {{o.message}}<br>
-				Parent Message: <input ng-model="o.message">
-				<div ng-controller="ChildCtrl">
-					Child Message: {{o.message}}<br>
-					Child Message: <input ng-model="o.message">
-
-
-					<div ng-show="showMe">Can you see me? </div>
-					<div><input ng-model="showMe" type="checkbox">Show Me!</div>
-				</div>
-			</div>
+		<main class="container">
+			<header>
+				<h1>Widget App</h1>
+			</header>
+			<div ui-view></div>
+			<footer>
+				&copy; 2016 VMWare Rock!
+			</footer>
 		</main>
 
 		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/ng/angular.js"></script>
