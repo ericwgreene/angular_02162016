@@ -1,12 +1,25 @@
 (function(angular) {
 
-	factory.$inject = ["$http"];
+	// https://t4dclass.herokuapp.com/api/widgets
 
-	function factory($http) {
+	factory.$inject = ["$http", "BASE_URL"];
+
+	function factory($http, BASE_URL) {
+
+		var widgetAPIURL = "/api/widgets";
+
+		return {
+			getAll: function() {
+				return $http.get(BASE_URL + widgetAPIURL);
+			},
+			get: function(widgetId) {
+				return $http.get(BASE_URL + widgetAPIURL + "/" + encodeURIComponent(widgetId));
+			}
+		};
 
 	}
 
-	angular.modules("WidgetApp.Services")
+	angular.module("WidgetApp.Services")
 		.factory("widgets", factory);
 
 })(angular);

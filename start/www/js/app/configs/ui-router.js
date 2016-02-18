@@ -11,6 +11,11 @@
 				url: "/",
 				controller: "homeCtrl",
 				templateUrl: "tpls/widget-list.html"
+			})
+			.state("view", {
+				url: "/widgets/:widgetId",
+				controller: "viewWidgetCtrl",
+				templateUrl: "tpls/widget-view.html"
 			});
 
 	}

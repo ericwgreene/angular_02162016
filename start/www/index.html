@@ -14,6 +14,43 @@
 	<body>
 
 		<main class="container">
+			<script id="tpls/widget-list.html" type="text/ng-template">
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Color</th>
+							<th>Size</th>
+							<th>Qty</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="widget in widgets">
+							<td>{{widget.name}}</td>
+							<td>{{widget.color}}</td>
+							<td>{{widget.size}}</td>
+							<td>{{widget.quantity}}</td>
+							<td>
+								<button ng-click="editWidget(widget._id)">Edit</button>
+								<button ng-click="viewWidget(widget._id)">View</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<button ng-click="createWidget()">Create Widget</button>
+			</script>
+			<script id="tpls/widget-view.html" type="text/ng-template">
+				<div>
+					<div>Name: {{widget.name}}</div>
+					<div>Description: {{widget.description}}</div>
+					<div>Color: {{widget.color}}</div>
+					<div>Size: {{widget.size}}</div>
+					<div>Quantity: {{widget.quantity}}</div>
+				</div>
+				<button ng-click="editWidget()">Edit</button>
+				<button ng-click="returnToList()">Return to List</button>
+			</script>
 			<header>
 				<h1>Widget App</h1>
 			</header>
@@ -28,6 +65,32 @@
 		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/ng/angular-sanitize.js"></script>
 		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/ng/angular-ui-router.js"></script>
 		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/site.js"></script>
+
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/app/init.js"></script>
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/app/constants.js"></script>
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/app/services/widgets.js"></script>
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/app/configs/ui-router.js"></script>
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/app/controllers/home.js"></script>
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/app/controllers/view-widget.js"></script>
+		<script src="file:///Users/ericwgreene/git/training4developers/angular_02162016/start/www/js/app/app.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	</body>
 
