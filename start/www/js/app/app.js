@@ -4,7 +4,14 @@
 
 		angular.bootstrap(document.querySelector("main"), ["WidgetApp"]);
 
+		
+
+
 	});
+
+
+
+
 
 
 })(angular);
